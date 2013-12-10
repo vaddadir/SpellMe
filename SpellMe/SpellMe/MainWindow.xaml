@@ -2,8 +2,25 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:SpellMe.ViewModels"
-        Title="Spell Me" Height="350" Width="525" DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Main}">
+        Title="Spell Me" Height="350" Width="525" DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Main}" WindowState="Normal" WindowStyle="ToolWindow" ResizeMode="NoResize">
    <Grid>
-        <Button Name="SayIt" Content="{Binding SayItText}"></Button>     
-   </Grid>
+       <Grid.RowDefinitions>
+           <RowDefinition Height="Auto"></RowDefinition>
+           <RowDefinition Height="Auto"></RowDefinition>
+           <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+       <StackPanel FlowDirection="LeftToRight" Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button Name="SayAWord" Content="{Binding SayAWordButtonText}" Command="{Binding SayAWordCommand}"></Button>
+            <Button Name="UseItInASentence" Content="{Binding UseItInASentenceButtonText}" Style="{Binding Source={StaticResource UseItInASentence}}"></Button>
+       </StackPanel>
+       <TextBox Grid.Row="1"></TextBox>
+        <StackPanel FlowDirection="LeftToRight" Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button Name="Submit" Content="{Binding SubmitButtonText}" Command="{Binding SubmitCommand}"></Button>
+            <Button Name="Close" Content="{Binding CloseButtonText}" Command="{Binding CloseCommand}"></Button>
+        </StackPanel>
+       <DockPanel Grid.Row="3" Dock="Bottom">
+           <TextBlock Text="{Binding Results, Mode=TwoWay}" Height="100"></TextBlock>
+       </DockPanel>
+    </Grid>
 </Window>
