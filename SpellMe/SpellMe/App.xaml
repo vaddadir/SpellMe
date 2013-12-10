@@ -1,0 +1,14 @@
+﻿<Application x:Class="SpellMe.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:SpellMe.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <vm:ViewModelLocator x:Key="ViewModelLocator"></vm:ViewModelLocator>
+         <Style TargetType="Button">
+             <Setter Property="Width" Value="150"></Setter>
+             <Setter Property="Height" Value="30"></Setter>
+         </Style>
+    </Application.Resources>
+    
+</Application>
