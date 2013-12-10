@@ -7,6 +7,10 @@ namespace SpellMe.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        private String _results = String.Empty;
+
+        #region Constructor
+
         private MainViewModel()
         {
             SayAWordButtonText = "Say the word";
@@ -18,6 +22,8 @@ namespace SpellMe.ViewModels
             SayAWordCommand = new ClickCommand("SayAWordButton", OnSayAWord);
             SubmitCommand = new ClickCommand("SubmitButton", OnSubmitClick);
         }
+
+        #endregion Constructor
 
         private void OnSubmitClick(object obj)
         {
@@ -53,8 +59,6 @@ namespace SpellMe.ViewModels
         public String SubmitButtonText { get; set; }
 
         public ClickCommand SubmitCommand { get; set; }
-
-        private String _results = String.Empty;
 
         public String Results
         {
