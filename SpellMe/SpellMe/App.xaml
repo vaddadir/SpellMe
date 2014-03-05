@@ -22,6 +22,12 @@
             <Setter Property="HorizontalAlignment" Value="Left"></Setter>
             <Setter Property="VerticalAlignment" Value="Top"></Setter>
         </Style>
+        <Style x:Key="IncorrectTextColor" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Red"></Setter>
+        </Style>
+        <Style x:Key="CorrectTextColor" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Green"></Setter>
+        </Style>
     </Application.Resources>
     
 </Application>
